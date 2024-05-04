@@ -34,7 +34,6 @@ app.get('/weather', (req, res) => {
   console.log(req.query)
   if(req.query.lat.length !== 0 && req.query.long.length !== 0)  {
     
-    console.log('if condi')
     geocode(req.query.lat, req.query.long, (geoData) => {
       console.log(geoData)
       forecast(geoData, (forecastData) => {
