@@ -51,7 +51,7 @@ const successCallback = (position) => {
 
     loading.textContent = 'Fetching your current location'
 
-    fetch('http://localhost:3000/weather?address='+location+'&lat='+lati+'&long='+longi)
+    fetch('/weather?address='+location+'&lat='+lati+'&long='+longi)
     .then(response => response.json())
     .then((data) => {
         
@@ -77,7 +77,7 @@ weatherForm.addEventListener('submit', (e) => {
     const location = search.value
     loading.textContent = 'Loading Weather...'
 
-    fetch('http://localhost:3000/weather?address='+location+'&lat=&long=')
+    fetch('/weather?address='+location+'&lat=&long=')
     .then(response => response.json())
     .then((data) => {
         
