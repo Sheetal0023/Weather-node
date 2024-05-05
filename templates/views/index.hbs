@@ -12,116 +12,454 @@
 
     {{>header}}
     
-    {{!-- <div class="parent">
-      <p id="loading"></p>
-      <h6 class="date"></h6>
-     <div class="parent-1">
-       <div class="child-1">
-          <img id="iconImg">
-       </div>
-       <div class="child-2">
-          <h2 id="tempMsg"></h2>
-       </div>
-        <p id="address"></p>
-     </div>
-     <div class="parent-2">
-      <p id="content"></p>
-     </div>
-     <div class="parent-3">
-        <div class="child-1">
-          <p id="cloudcover"></p>
-        </div>
-        <div class="child-2">
-          <p id="windspeed"></p>
-        </div>
-     </div>
-    </div> --}}
+    
 
-     {{!-- <div class="parent">
-            <h6 class="date-next"></h6>
-     <div class="parent-1">
-       <div class="child-1">
-          <img id="iconImg-next">
-       </div>
-       <div class="child-2">
-          <h2 id="tempMsg-next"></h2>
-       </div>
-        <p id="address-next"></p>
-     </div>
-     <div class="parent-2">
-      <p id="content-next"></p>
-     </div>
-     <div class="parent-3">
-        <div class="child-1">
-          <p id="cloudcover-next"></p>
-        </div>
-        <div class="child-2">
-          <p id="windspeed-next"></p>
-        </div>
-     </div>
-    </div> --}}
-
-
-<div class="container">
+<div id="day0" class="container" >
   <p id="loading"></p>
-  <h6 class="date"></h6>
+  <h6 id ="date0" class="dateGray"></h6>
   <div class="row">
     <div class="col-3">
-      <img id="iconImg">
+      <img id="iconImg0">
     </div>
     <div class="col">
-      <h2 id="tempMsg"></h2>
+      <h2 id="tempMsg0"></h2>
     </div>
     <div class="col">
-      <p id="address"></p>
+      <p id="address0" class="addr"></p>
     </div>
   </div>
    <div class="row">
     <div class="col">
-      <p id="content"></p>
+      <p id="content0"></p>
     </div>
-  </div>
+  </div >
   <div class="row">
     <div class="col">
-        <p id="cloudcover"></p>
+        <p id="cloudcover0"></p>
     </div>
     <div class="col">
-      <p id="windspeed"></p>
+      <p id="windspeed0"></p>
     </div>
+  </div>
+  <div id="test0">
+      <div class="row">
+        <div class="col">
+          <p id="tempmax0"></p>
+        </div>
+        <div class="col">
+          <p id="tempmin0"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="humidity0"></p>
+        </div>
+        <div class="col">
+          <p id="dew0"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="visibility0"></p>
+        </div>
+        <div class="col">
+          <p id="uvindex0"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="sunset0"></p>
+        </div>
+        <div class="col">
+          <p id="sunrise0"></p>
+        </div>
+      </div>
   </div>
 </div>
 
-<div class="container">
+<div id="day1" class="container">
   <p id="loading"></p>
-  <h6 class="date-next"></h6>
+  <h6 id="date1" class="dateGray"></h6>
   <div class="row">
     <div class="col-3">
-      <img id="iconImg-next">
+      <img id="iconImg1">
     </div>
     <div class="col">
-      <h2 id="tempMsg-next"></h2>
+      <h2 id="tempMsg1"></h2>
     </div>
     <div class="col">
-      <p id="address-next"></p>
+      <p id="address1" class="addr"></p>
     </div>
   </div>
    <div class="row">
     <div class="col">
-      <p id="content-next"></p>
+      <p id="content1"></p>
     </div>
   </div>
   <div class="row">
     <div class="col">
-        <p id="cloudcover-next"></p>
+        <p id="cloudcover1"></p>
     </div>
     <div class="col">
-      <p id="windspeed-next"></p>
+      <p id="windspeed1"></p>
     </div>
+  </div>
+  <div id="test1">
+      <div class="row">
+        <div class="col">
+          <p id="tempmax1"></p>
+        </div>
+        <div class="col">
+          <p id="tempmin1"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="humidity1"></p>
+        </div>
+        <div class="col">
+          <p id="dew1"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="visibility1"></p>
+        </div>
+        <div class="col">
+          <p id="uvindex1"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="sunset1"></p>
+        </div>
+        <div class="col">
+          <p id="sunrise1"></p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div id="day2" class="container">
+  <p id="loading"></p>
+  <h6 id="date2" class="dateGray"></h6>
+  <div class="row">
+    <div class="col-3">
+      <img id="iconImg2">
+    </div>
+    <div class="col">
+      <h2 id="tempMsg2"></h2>
+    </div>
+    <div class="col">
+      <p id="address2" class="addr"></p>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col">
+      <p id="content2"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <p id="cloudcover2"></p>
+    </div>
+    <div class="col">
+      <p id="windspeed2"></p>
+    </div>
+  </div>
+  <div id="test2">
+      <div class="row">
+        <div class="col">
+          <p id="tempmax2"></p>
+        </div>
+        <div class="col">
+          <p id="tempmin2"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="humidity2"></p>
+        </div>
+        <div class="col">
+          <p id="dew2"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="visibility2"></p>
+        </div>
+        <div class="col">
+          <p id="uvindex2"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="sunset2"></p>
+        </div>
+        <div class="col">
+          <p id="sunrise2"></p>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+<div id="day3" class="container">
+  <p id="loading"></p>
+  <h6 id="date3" class="dateGray"></h6>
+  <div class="row">
+    <div class="col-3">
+      <img id="iconImg3">
+    </div>
+    <div class="col">
+      <h2 id="tempMsg3"></h2>
+    </div>
+    <div class="col">
+      <p id="address3" class="addr"></p>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col">
+      <p id="content3"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <p id="cloudcover3"></p>
+    </div>
+    <div class="col">
+      <p id="windspeed3"></p>
+    </div>
+  </div>
+  <div id="test3">
+      <div class="row">
+        <div class="col">
+          <p id="tempmax3"></p>
+        </div>
+        <div class="col">
+          <p id="tempmin3"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="humidity3"></p>
+        </div>
+        <div class="col">
+          <p id="dew3"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="visibility3"></p>
+        </div>
+        <div class="col">
+          <p id="uvindex3"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="sunset3"></p>
+        </div>
+        <div class="col">
+          <p id="sunrise3"></p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div id="day4" class="container">
+  <p id="loading"></p>
+  <h6 id="date4" class="dateGray"></h6>
+  <div class="row">
+    <div class="col-3">
+      <img id="iconImg4">
+    </div>
+    <div class="col">
+      <h2 id="tempMsg4"></h2>
+    </div>
+    <div class="col">
+      <p id="address4" class="addr"></p>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col">
+      <p id="content4"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <p id="cloudcover4"></p>
+    </div>
+    <div class="col">
+      <p id="windspeed4"></p>
+    </div>
+  </div>
+  <div id="test4">
+      <div class="row">
+        <div class="col">
+          <p id="tempmax4"></p>
+        </div>
+        <div class="col">
+          <p id="tempmin4"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="humidity4"></p>
+        </div>
+        <div class="col">
+          <p id="dew4"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="visibility4"></p>
+        </div>
+        <div class="col">
+          <p id="uvindex4"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="sunset4"></p>
+        </div>
+        <div class="col">
+          <p id="sunrise4"></p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div id="day5" class="container">
+  <p id="loading"></p>
+  <h6 id="date5" class="dateGray"></h6>
+  <div class="row">
+    <div class="col-3">
+      <img id="iconImg5">
+    </div>
+    <div class="col">
+      <h2 id="tempMsg5"></h2>
+    </div>
+    <div class="col">
+      <p id="address5" class="addr"></p>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col">
+      <p id="content5"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <p id="cloudcover5"></p>
+    </div>
+    <div class="col">
+      <p id="windspeed5"></p>
+    </div>
+  </div>
+  <div id="test5">
+      <div class="row">
+        <div class="col">
+          <p id="tempmax5"></p>
+        </div>
+        <div class="col">
+          <p id="tempmin5"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="humidity5"></p>
+        </div>
+        <div class="col">
+          <p id="dew5"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="visibility5"></p>
+        </div>
+        <div class="col">
+          <p id="uvindex5"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="sunset5"></p>
+        </div>
+        <div class="col">
+          <p id="sunrise5"></p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div id="day6" class="container">
+  <p id="loading"></p>
+  <h6 id="date6" class="dateGray"></h6>
+  <div class="row">
+    <div class="col-3">
+      <img id="iconImg6">
+    </div>
+    <div class="col">
+      <h2 id="tempMsg6"></h2>
+    </div>
+    <div class="col">
+      <p id="address6" class="addr"></p>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col">
+      <p id="content6"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <p id="cloudcover6"></p>
+    </div>
+    <div class="col">
+      <p id="windspeed6"></p>
+    </div>
+  </div>
+  <div id="test6">
+      <div class="row">
+        <div class="col">
+          <p id="tempmax6"></p>
+        </div>
+        <div class="col">
+          <p id="tempmin6"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="humidity6"></p>
+        </div>
+        <div class="col">
+          <p id="dew6"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="visibility6"></p>
+        </div>
+        <div class="col">
+          <p id="uvindex6"></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col">
+          <p id="sunset6"></p>
+        </div>
+        <div class="col">
+          <p id="sunrise6"></p>
+        </div>
+      </div>
   </div>
 </div>
     
     
     <script src="/js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
