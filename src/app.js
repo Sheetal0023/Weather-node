@@ -7,8 +7,7 @@ const app = express();
 const port = process.env.PORT || 3000
 
 const forecast = require('./utils/forecast')
-const geocode = require('./utils/geocode')
-
+const geocode = require('./utils/geocode');
 
 
 const publicDirectoryPath = path.join(__dirname, "../public");
@@ -33,19 +32,20 @@ app.get('', (req, res) => {
 
 
 app.get('/weather', (req, res) => {
-  console.log(req.query)
+
   if(req.query.lat.length !== 0 && req.query.long.length !== 0)  {
     
     geocode(req.query.lat, req.query.long, (geoData) => {
-      console.log(geoData)
       forecast(geoData, (forecastData) => {
+        
         res.send({
-          weatherData:forecastData,
-          icon:forecastData.currentConditions.icon,
-          temp:forecastData.currentConditions.temp,
-          humidity:forecastData.currentConditions.humidity,
-          windspeed:forecastData.currentConditions.windspeed,
-          cloudcover:forecastData.currentConditions.cloudcover,
+          error: forecastData.error,
+          weatherData:forecastData.body,
+          icon:forecastData.body.currentConditions.icon,
+          temp:forecastData.body.currentConditions.temp,
+          humidity:forecastData.body.currentConditions.humidity,
+          windspeed:forecastData.body.currentConditions.windspeed,
+          cloudcover:forecastData.body.currentConditions.cloudcover,
         })
       })
 
@@ -53,16 +53,24 @@ app.get('/weather', (req, res) => {
 
 
   } else {
-    console.log('else co')
+
     forecast(req.query.address, (forecastData) => {
-      res.send({
-        weatherData:forecastData,
-        icon:forecastData.currentConditions.icon,
-        temp:forecastData.currentConditions.temp,
-        humidity:forecastData.currentConditions.humidity,
-        windspeed:forecastData.currentConditions.windspeed,
-        cloudcover:forecastData.currentConditions.cloudcover,
-      })
+      if(forecastData.body === 'undefined') {
+        
+        res.send({
+          error: forecastData.Error
+        })
+
+      } else {
+          res.send({
+          weatherData:forecastData.body,
+          icon:forecastData.body.currentConditions.icon,
+          temp:forecastData.body.currentConditions.temp,
+          humidity:forecastData.body.currentConditions.humidity,
+          windspeed:forecastData.body.currentConditions.windspeed,
+          cloudcover:forecastData.body.currentConditions.cloudcover,
+           })
+          }
     })
 
   }

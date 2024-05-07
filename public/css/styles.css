@@ -14,3 +14,9 @@
 .addr {
     font-weight: bold;
 }
+
+
+#loading {
+    text-align: center;
+    font-weight: bold;
+}

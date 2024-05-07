@@ -1,10 +1,5 @@
-console.log('Client Side Server Is ON')
-
-
-
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
-
 
 const loading = document.querySelector('#loading')
 const date = document.querySelector('#date0')
@@ -21,7 +16,6 @@ const day3 = document.querySelector('#day3')
 const day4 = document.querySelector('#day4')
 const day5 = document.querySelector('#day5')
 const day6 = document.querySelector('#day6')
-
 
 
 loading.textContent = 'Please enter loaction'
@@ -70,81 +64,30 @@ const successCallback = (position) => {
     fetch('/weather?address='+location+'&lat='+lati+'&long='+longi)
     .then(response => response.json())
     .then((data) => {
-        
+
+
+        if(data.error !== undefined) {
+
+            loading.innerHTML = data.error
+
+        } else {
+
         loading.textContent = ''
-        console.log('coords')
+
         currentWeather(data)  // current loaction data
         
         for(let step = 0; step < 7; step++) {
             Day1(data, step, step)
+            entireDay(data, step, step)
         }
         
-        day0.addEventListener('click', function() {
-            entireDay(data, 0, 0)
-        })
-
-        day1.addEventListener('click', function() {
-            entireDay(data, 1, 1)
-        })
-
-        day2.addEventListener('click', function() {
-            entireDay(data, 2, 2)
-        })
-        day3.addEventListener('click', function() {
-            entireDay(data, 3, 3)
-        })
-        day4.addEventListener('click', function() {
-            entireDay(data, 4, 4)
-        })
-        day5.addEventListener('click', function() {
-            entireDay(data, 5, 5)
-        })
-        day6.addEventListener('click', function() {
-            entireDay(data, 6, 6)
-        })
-
-
-        $(document).ready(function(){
-            $("#day0").click(function(){
-              $("#test0").toggle(500);
-            });
-          });
-
-          $(document).ready(function(){
-            $("#day1").click(function(){
-              $("#test1").toggle(500);
-            });
-          });
-          $(document).ready(function(){
-            $("#day2").click(function(){
-              $("#test2").toggle(500);
-            });
-          });
-          $(document).ready(function(){
-            $("#day3").click(function(){
-              $("#test3").toggle(500);
-            });
-          });
-          $(document).ready(function(){
-            $("#day4").click(function(){
-              $("#test4").toggle(500);
-            });
-          });
-          $(document).ready(function(){
-            $("#day5").click(function(){
-              $("#test5").toggle(500);
-            });
-          });
-          $(document).ready(function(){
-            $("#day6").click(function(){
-              $("#test6").toggle(500);
-            });
-          });
-       
+        }
     })
 
 
 }
+
+
 
 navigator.geolocation.getCurrentPosition(successCallback)
 
@@ -157,80 +100,66 @@ weatherForm.addEventListener('submit', (e) => {
     fetch('/weather?address='+location+'&lat=&long=')
     .then(response => response.json())
     .then((data) => {
+
+
+        if(data.error !== undefined) {
+
+            loading.innerHTML = data.error
+
+        } else {
         
         loading.textContent = ''
-        console.log('addr')
+
         currentWeather(data) // current loaction data
         
-        for(let step = 1; step < 7; step++) {
+        for(let step = 0; step < 7; step++) {
             Day1(data, step, step)
+            entireDay(data, step, step)
         }
 
-        day0.addEventListener('click', function() {
-            entireDay(data, 0, 0)
-        })
-
-        day1.addEventListener('click', function() {
-            entireDay(data, 1, 1)
-        })
-
-        day2.addEventListener('click', function() {
-            entireDay(data, 2, 2)
-        })
-        day3.addEventListener('click', function() {
-            entireDay(data, 3, 3)
-        })
-        day4.addEventListener('click', function() {
-            entireDay(data, 4, 4)
-        })
-        day5.addEventListener('click', function() {
-            entireDay(data, 5, 5)
-        })
-        day6.addEventListener('click', function() {
-            entireDay(data, 6, 6)
-        })
-
-
-        $(document).ready(function(){
-            $("#day0").click(function(){
-              $("#test0").toggle(500);
-            });
-          });
-
-          $(document).ready(function(){
-            $("#day1").click(function(){
-              $("#test1").toggle(500);
-            });
-          });
-          $(document).ready(function(){
-            $("#day2").click(function(){
-              $("#test2").toggle(500);
-            });
-          });
-          $(document).ready(function(){
-            $("#day3").click(function(){
-              $("#test3").toggle(500);
-            });
-          });
-          $(document).ready(function(){
-            $("#day4").click(function(){
-              $("#test4").toggle(500);
-            });
-          });
-          $(document).ready(function(){
-            $("#day5").click(function(){
-              $("#test5").toggle(500);
-            });
-          });
-          $(document).ready(function(){
-            $("#day6").click(function(){
-              $("#test6").toggle(500);
-            });
-          });
-
+    }  
 
     })
     
 })
+
+const showHide = (dayValue) => {
+    var x = document.querySelector("#test"+dayValue);
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+}
+
+day0.addEventListener('click', function() {
+    showHide(0)
+})
+
+day1.addEventListener('click', function() {
+    showHide(1)
+})
+
+day2.addEventListener('click', function() {
+    showHide(2)
+})
+
+day3.addEventListener('click', function() {
+    showHide(3)
+})
+
+day4.addEventListener('click', function() {
+    showHide(4)
+})
+
+day5.addEventListener('click', function() {
+    showHide(5)
+})
+
+day6.addEventListener('click', function() {
+    showHide(6)
+})
+
+
 
 
