@@ -2,12 +2,6 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 
 const loading = document.querySelector('#loading')
-const date = document.querySelector('#date0')
-const tempMessage = document.querySelector('#tempMsg0')
-const address = document.querySelector('#address0')
-const content = document.querySelector('#content0')
-const cloudcover = document.querySelector('#cloudcover0')
-const windspeed = document.querySelector('#windspeed0')
 
 const day0 = document.querySelector('#day0')
 const day1 = document.querySelector('#day1')
@@ -17,22 +11,19 @@ const day4 = document.querySelector('#day4')
 const day5 = document.querySelector('#day5')
 const day6 = document.querySelector('#day6')
 
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
 
 loading.textContent = 'Please enter loaction'
 
-const currentWeather = (data) => {
-   
-    date.textContent =data.weatherData.days[0].datetime
-    tempMessage.textContent = data.temp+'°C'
-    document.getElementById('iconImg0').src = '/img/'+data.icon+'.png'
-    address.textContent = data.weatherData.resolvedAddress
-    content.textContent = data.weatherData.description
-    cloudcover.textContent = 'Cloud Coverage ' +data.cloudcover+ '%'
-    windspeed.textContent = 'Wind Speed ' +data.windspeed+ 'Km/h'
-}
 
-const Day1 = (data, dayAPI, dayHTML) => {
-    document.querySelector('#date'+dayHTML).textContent = data.weatherData.days[dayAPI].datetime
+const Days = (data, dayAPI, dayHTML) => {
+
+    const currentDayapi =  data.weatherData.days[dayAPI].datetime
+    const d = new Date(currentDayapi);
+ 
+    document.querySelector('#dayBtn'+dayHTML).textContent = weekday[d.getDay()]
+    document.querySelector('#date'+dayHTML).textContent =  weekday[d.getDay()]
     document.querySelector('#tempMsg'+dayHTML).textContent = data.weatherData.days[dayAPI].temp+'°C'
     document.getElementById('iconImg'+dayHTML).src = '/img/'+data.weatherData.days[dayAPI].icon+'.png'
     document.querySelector('#address'+dayHTML).textContent = data.weatherData.resolvedAddress
@@ -74,10 +65,10 @@ const successCallback = (position) => {
 
         loading.textContent = ''
 
-        currentWeather(data)  // current loaction data
+        // currentWeather(data)  // current loaction data
         
         for(let step = 0; step < 7; step++) {
-            Day1(data, step, step)
+            Days(data, step, step)
             entireDay(data, step, step)
         }
         
@@ -110,10 +101,10 @@ weatherForm.addEventListener('submit', (e) => {
         
         loading.textContent = ''
 
-        currentWeather(data) // current loaction data
+        // currentWeather(data) // current loaction data
         
         for(let step = 0; step < 7; step++) {
-            Day1(data, step, step)
+            Days(data, step, step)
             entireDay(data, step, step)
         }
 

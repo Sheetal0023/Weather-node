@@ -79,8 +79,8 @@ app.get('/weather', (req, res) => {
 
 });
 
-app.get('/help/*', (req, res) => {
-  res.render('404', {
+app.get('/help', (req, res) => {
+  res.render('help', {
     title: 'Help Page',
     name: 'Sheetal',
     errorMessage: 'Artical is not found'
