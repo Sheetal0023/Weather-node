@@ -116,10 +116,13 @@ weatherForm.addEventListener('submit', (e) => {
 
 const showHide = (dayValue) => {
     var x = document.querySelector("#test"+dayValue);
+    var y = document.querySelector("#btn"+dayValue)
     if (x.style.display === "none") {
       x.style.display = "block";
+      y.textContent = "Show Less"
     } else {
       x.style.display = "none";
+      y.textContent = "Show More"
     }
 }
 
