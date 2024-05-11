@@ -22,7 +22,6 @@ const Days = (data, dayAPI, dayHTML) => {
     const currentDayapi =  data.weatherData.days[dayAPI].datetime
     const d = new Date(currentDayapi);
  
-    document.querySelector('#dayBtn'+dayHTML).textContent = weekday[d.getDay()]
     document.querySelector('#date'+dayHTML).textContent =  weekday[d.getDay()]
     document.querySelector('#tempMsg'+dayHTML).textContent = data.weatherData.days[dayAPI].temp+'°C'
     document.getElementById('iconImg'+dayHTML).src = '/img/'+data.weatherData.days[dayAPI].icon+'.png'
