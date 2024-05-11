@@ -30,3 +30,11 @@
 .days_buttons {
     padding-left: 20px;
 }
+
+.btn btn-primary btn-sm {
+    display: flex;
+    margin-inline: auto;
+    background-color: rgba(120, 120, 158, 0.721);
+    color: black;
+    border: #9C27B0;
+}

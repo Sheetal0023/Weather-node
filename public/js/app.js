@@ -45,12 +45,22 @@ const entireDay = (data, dayAPI, dayHTML) => {
 
 }
 
+const showBtn = (btnText) => {
+    for(let i = 0; i < 7; i++) {
+        let x= document.querySelector("#bttn"+i)
+        // x.style.display = "Block"
+        x.textContent = btnText
+    }
+}
+
 
 const successCallback = (position) => {
     var lati = position.coords.latitude
     var longi = position.coords.longitude
 
     loading.textContent = 'Fetching your current location'
+
+    showBtn("Loading....")
 
     fetch('/weather?address='+location+'&lat='+lati+'&long='+longi)
     .then(response => response.json())
@@ -66,6 +76,8 @@ const successCallback = (position) => {
         loading.textContent = ''
 
         // currentWeather(data)  // current loaction data
+
+        showBtn("Show More")
         
         for(let step = 0; step < 7; step++) {
             Days(data, step, step)
@@ -88,6 +100,8 @@ weatherForm.addEventListener('submit', (e) => {
     const location = search.value
     loading.textContent = 'Loading Weather...'
 
+    showBtn("Loading...")
+
     fetch('/weather?address='+location+'&lat=&long=')
     .then(response => response.json())
     .then((data) => {
@@ -100,6 +114,9 @@ weatherForm.addEventListener('submit', (e) => {
         } else {
         
         loading.textContent = ''
+
+        showBtn("Show More")
+
 
         // currentWeather(data) // current loaction data
         
@@ -116,13 +133,15 @@ weatherForm.addEventListener('submit', (e) => {
 
 const showHide = (dayValue) => {
     var x = document.querySelector("#test"+dayValue);
-    var y = document.querySelector("#btn"+dayValue)
+    var y = document.querySelector("#bttn"+dayValue)
     if (x.style.display === "none") {
       x.style.display = "block";
       y.textContent = "Show Less"
+      y.className = "btn btn-warning btn-sm"
     } else {
       x.style.display = "none";
       y.textContent = "Show More"
+      y.className = "btn btn-success btn-sm"
     }
 }
 
